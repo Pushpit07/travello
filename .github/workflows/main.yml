@@ -1,0 +1,25 @@
+name: Travello AWS deployment
+  
+on: 
+  pull_request:
+    branches:
+      - deplo
+  push: 
+    branches:
+      - deplo
+        
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version: [3.6.10]
+  
+    steps:
+      - name: Django aws eb deployment
+        uses: pushpit07/travello
+        with:
+          aws_access_key_id: ${{ secrets.aws_access_key_id }}
+          aws_secret_access_key: ${{ secrets.aws_secret_access_key }}.
+          # Deploy to AWS Elastic beanstalk
+          deploy: true
