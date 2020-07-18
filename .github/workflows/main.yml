@@ -16,6 +16,7 @@ jobs:
         python_version: [3.6.10]
   
     steps:
+      - uses: actions/checkout@v2
       - name: Django aws eb deployment
         uses: pushpit07/travello
         with:
