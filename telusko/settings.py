@@ -25,7 +25,7 @@ SECRET_KEY = '7yy@*5lr-dcg5(s!&ry_q$u0g@_5_s0=&e#xh$95#8r^f#%$^f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['travello-env.eba-c4vizphz.us-west-2.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
@@ -76,12 +76,16 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'trial-db',
-        'USER': 'pushpitbhardwaj',
-        'PASSWORD': '12345',
-        'HOST': 'localhost'
-    }
+            'ENGINE': 'djongo',
+            'NAME': 'travel',
+            'CLIENT': {
+                'host': '34.215.134.189',
+                'port': 27017,
+                'username': 'adm',
+                'password': 'adam',
+                'authSource': 'travel',
+            },
+        }
 }
 
 
