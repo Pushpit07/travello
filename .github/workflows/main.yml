@@ -16,9 +16,9 @@ jobs:
         python_version: [3.6.10]
   
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@deplo
       - name: Django aws eb deployment
-        uses: pushpit07/travello
+        uses: pushpit07/travello@deplo
         with:
           aws_access_key_id: ${{ secrets.aws_access_key_id }}
           aws_secret_access_key: ${{ secrets.aws_secret_access_key }}.
