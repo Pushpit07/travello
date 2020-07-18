@@ -1,0 +1,35 @@
+name: Travello Deploy
+on: 
+  pull_request:
+    branches:
+      - deplo
+  push: 
+    branches:
+      - deplo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checkout source code
+      uses: actions/checkout@v1
+
+    - name: Generate deployment package
+      run: zip deploy.zip *.js *.json *.html *.css
+      
+    - name: Deploy to EB
+      uses: pushpit07/travello@v10
+      with:
+        # AWS Access Key
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        # AWS Secret Key
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        # AWS Region
+        region: us-west-2
+        # Beanstalk application name
+        application_name: travello
+        # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
+        environment_name: travello-env
+        # Version label for new Beanstalk version
+        version_label: app-3e10-200718_201349
