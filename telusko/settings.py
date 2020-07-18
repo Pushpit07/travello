@@ -25,7 +25,7 @@ SECRET_KEY = '7yy@*5lr-dcg5(s!&ry_q$u0g@_5_s0=&e#xh$95#8r^f#%$^f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['travello-env.eba-c4vizphz.us-west-2.elasticbeanstalk','127.0.0.1']
+ALLOWED_HOSTS = ['travello-env.eba-c4vizphz.us-west-2.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
